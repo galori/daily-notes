@@ -13,4 +13,4 @@ end
 
 system_caller = SystemCaller.new
 
-DailyNotes::DailyNotes.new(base_path: base_path, system_caller: system_caller).perform
+DailyNotes::DailyNotesCreationService.new(base_path: base_path, system_caller: system_caller).perform

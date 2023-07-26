@@ -76,7 +76,7 @@ RSpec.describe DailyNotes do
 
   describe 'opening the IDE after creating the file' do
     let(:system_caller) { double(:system_caller) }
-    let(:call_string) { "code -r \"#{@base_path}/07/7.02/daily_notes.md\"" }
+    let(:call_string) { "idea \"#{@base_path}/07/7.02/daily_notes.md\"" }
 
     before do
       allow(system_caller).to receive(:call_system)

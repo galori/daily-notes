@@ -18,15 +18,15 @@ module DailyNotes
       init_time_zone
       create_folder
       create_daily_notes_file unless file_exists?
-      open_file_in_vscode
+      open_file_in_intellij
     end
 
     private
 
     attr_accessor :base_path, :system_caller
 
-    def open_file_in_vscode
-      system_caller.call_system("code -r \"#{folder_and_file_with_path}\"")
+    def open_file_in_intellij
+      system_caller.call_system("idea \"#{folder_and_file_with_path}\"")
     end
 
     def validate_base_path
