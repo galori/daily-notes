@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "daily_notes"
+
+base_path = ARGV[0]
+
+class SystemCaller
+  def call_system(command)
+    system(command)
+  end
+end
+
+system_caller = SystemCaller.new
+
+DailyNotes::DailyNotes.new(base_path: base_path, system_caller: system_caller).perform
