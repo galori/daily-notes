@@ -17,7 +17,7 @@ def mock_system_caller
 end
 
 def create_daily_notes(base_path: @base_path, system_caller: mock_system_caller)
-  Timecop.travel(Time.zone.local(2022, 7, 02, 13, 0, 0)) do
+  Timecop.travel(Time.zone.local(2023, 7, 02, 13, 0, 0)) do
     DailyNotes::DailyNotesCreationService.new(base_path: base_path, system_caller: system_caller).perform
   end
 end

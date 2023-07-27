@@ -10,11 +10,12 @@ rake spec
 
 ```shell
 rake build
-rake install
+rake install:local
 ```
 
 ## Running 
 
 ```shell
-bin/create_daily_notes
+bin/create_daily_notes /Users/gall/Documents/Notes/
 ```
+

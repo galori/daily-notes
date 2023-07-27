@@ -26,7 +26,9 @@ module DailyNotes
     attr_accessor :base_path, :system_caller
 
     def open_file_in_intellij
-      system_caller.call_system("idea \"#{folder_and_file_with_path}\"")
+      call_string = "idea #{@base_path} --line 10 #{folder_and_file_with_path} &> /dev/null"
+      puts call_string
+      system_caller.call_system(call_string)
     end
 
     def validate_base_path
@@ -66,8 +68,12 @@ module DailyNotes
       Time.now.strftime("%d")
     end
 
+    def year
+      Time.now.strftime("%Y")
+    end
+
     def folder_with_path
-      "#{base_path}/#{padded_month}/#{month}.#{padded_day}"
+      "#{base_path}/#{year}/#{padded_month}/#{month}.#{padded_day}"
     end
 
     def create_folder
