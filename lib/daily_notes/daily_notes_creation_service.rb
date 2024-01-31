@@ -26,7 +26,8 @@ module DailyNotes
     attr_accessor :base_path, :system_caller
 
     def open_file_in_intellij
-      call_string = "idea #{@base_path} --line 10 #{folder_and_file_with_path} &> /dev/null"
+      # add &> /dev/null to the end of the call string to suppress output
+      call_string = "open -na \"IntelliJ IDEA.app\" --args /users/gall/Documents/Notes --line 10 #{folder_and_file_with_path}"
       puts call_string
       system_caller.call_system(call_string)
     end

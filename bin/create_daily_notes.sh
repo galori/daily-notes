@@ -5,6 +5,9 @@ if [ -d $HOME/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-"/users/gall/workspace/daily-notes/bin/create_daily_notes" "/users/gall/Documents/Notes/Daily/"
+cd /Users/gall/workspace/daily-notes
+bundle exec "bin/create_daily_notes.rb" "/users/gall/Documents/Notes/Daily/"
+
+#"/users/gall/workspace/daily-notes/bin/create_daily_notes" "/users/gall/Documents/Notes/Daily/"
 
 
